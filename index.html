@@ -21,6 +21,7 @@
                 Welcome to Renuka Products!
             </h1>
             <h5>A taste just like home.</h5>
+            <a href="#order"><button id="buynow">BUY NOW!</button></a>
             <hr color="white" width="28%">
         </div>
     </section>
@@ -76,7 +77,7 @@
         <hr width=38% align="left" size="3px" noshade>
     </section>-->
 
-    <div class="container">
+    <div class="container" id="order">
         <main>
             <div class="py-5 text-center">
                 <!--<img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72"
@@ -134,7 +135,16 @@
 
                             <div class="col-12">
                                 <label for="message" class="form-label">Your Order</label>
-                                <input type="text" class="form-control" id="message" name="message" required>
+                                <select class="form-control" id="message" name="message" required multiple="multiple">
+                                    <option value="Ladu">Ladu</option>
+                                    <option value="Supari">Supari</option>
+                                    <option value="Anarase_Flour">Anarase Flour</option>
+                                    <option value="Upwas_Bhajani">Upwas Bhajani</option>
+                                    <option value="Rajgira_Lahi">Rajgira Lahi</option>
+                                    <option value="metkut">Metkut</option>
+                                    <option value="Chakli_Bhajni">Chakani Bhajani</option>
+                                    <option value="Rajgira_Pith">Rajgira Pith</option>
+                                </select>
                                 <div class="invalid-feedback">
                                     Please enter your Order.
                                 </div>
@@ -149,6 +159,10 @@
             </div>
         </main>
     </div>
+
+    <br>
+    <br>
+    <hr width=100%>
 
 
     <script src="js/bootstrap.bundle.min.js"></script>

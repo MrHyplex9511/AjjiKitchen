@@ -4,11 +4,6 @@ Body {
     margin-right: 0px;
 }
 
-#Welcome {
-    background-image: url(../images/make-a-dog-near-the-fridge-17859467.png);
-    background-size: cover;
-}
-
 #Products {
     background-color: floralwhite;
 }
@@ -17,14 +12,17 @@ Label {
     font-size: 23px;
 }
 
-#Welcome div {
-    padding-left: 250px;
-    padding-top: 100px;
-    width: 1000px;
+#Welcome {
+    padding-left: 20px;
+    padding-top: 180px;
+    width: 100%;
     height: 1000px;
     font-size: 10px;
-    color: mediumspringgreen;
+    color: rgb(228, 36, 36);
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../images/make-a-dog-near-the-fridge-17859467.png);
+    background-size: cover;
+    font-weight: bolder;
 }
 
 #buynow {

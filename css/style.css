@@ -29,4 +29,5 @@ Label {
     background-color:rgb(214, 240, 144);
     font-size: large;
     font-weight: bolder;
+    border-radius: 15px;
 }

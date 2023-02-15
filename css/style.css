@@ -1,13 +1,10 @@
 Body {
     margin-top: 0;
     margin-left: 0;
-    margin-right: 0
+    margin-right: 0;
+    background-color: #414141;
 }
-
-#Products {
-    background-color: floralwhite
-}
-
+x
 Label {
     font-size: 23px
 }

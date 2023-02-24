@@ -1,9 +1,12 @@
 .container {
   max-width: 960px;
-  background-color: #3b3b3b;
+  background-color: #3b3b3b63;
   border-radius: 15px;
   padding-right: 75px;
   margin-top: 67px;
-  color: rgb(207, 206, 206);
-  
+  color: rgb(230, 230, 230);
 } 
+
+.container {
+  opacity: 99%;
+}

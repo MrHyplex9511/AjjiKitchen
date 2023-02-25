@@ -31,3 +31,10 @@ Label {
     margin-bottom: 1000px;
     color: #f8f8f8;
 }
+
+#Welcome h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 4vw, 10rem);
+    color: white;
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  }

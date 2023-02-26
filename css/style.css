@@ -38,3 +38,7 @@ Label {
     color: white;
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
   }
+
+::-webkit-scrollbar {
+    display: none;
+}

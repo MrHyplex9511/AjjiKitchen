@@ -11,23 +11,187 @@
     <link href=css/bootstrap.min.css rel=stylesheet>
     <link href=css/checkout.css rel=stylesheet>
     <link rel=stylesheet href=css/style.css>
+    <style>
+        /* The device with borders */
+        .smartphone {
+            position: relative;
+            width: 360px;
+            height: 640px;
+            margin: auto;
+            border: 16px black solid;
+            border-top-width: 60px;
+            border-bottom-width: 60px;
+            border-radius: 36px;
+        }
+
+        /* The horizontal line on the top of the device */
+        .smartphone:before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 10px;
+        }
+
+        /* The circle on the bottom of the device */
+        .smartphone:after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            left: 50%;
+            bottom: -65px;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 50%;
+        }
+
+        /* The screen (or content) of the device */
+        .smartphone .content {
+            width: 360px;
+            height: 640px;
+            background: white;
+        }
+    </style>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        /* The device with borders */
+        .tablet {
+            position: relative;
+            width: 768px;
+            height: 1024px;
+            margin: auto;
+            border: 16px black solid;
+            border-top-width: 60px;
+            border-bottom-width: 60px;
+            border-radius: 36px;
+        }
+
+        /* The horizontal line on the top of the device */
+        .tablet:before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 10px;
+        }
+
+        /* The circle on the bottom of the device */
+        .tablet:after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            left: 50%;
+            bottom: -65px;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 50%;
+        }
+
+        /* The screen (or content) of the device */
+        .tablet .content {
+            width: 768px;
+            height: 1024px;
+            background: white;
+            margin: -1px;
+        }
+    </style>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        /* The laptop with borders */
+        .laptop {
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scale(.6) translate(-50%);
+            /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+            transform: scale(.6) translate(-50%);
+            /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+            left: 50%;
+            position: absolute;
+            width: 1366px;
+            height: 800px;
+            border-radius: 6px;
+            border-style: solid;
+            border-color: black;
+            border-width: 24px 24px 80px;
+            background-color: black;
+
+        }
+
+        /* The keyboard of the laptop */
+        .laptop:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1600px;
+            height: 60px;
+            margin: 80px 0 0 -110px;
+            background: black;
+            border-radius: 6px;
+        }
+
+        /* The top of the keyboard */
+        .laptop:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 250px;
+            height: 30px;
+            bottom: -110px;
+            left: 50%;
+            -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+            background: #f1f1f1;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            z-index: 1;
+        }
+
+        /* The screen (or content) of the device */
+        .laptop .content {
+            width: 1366px;
+            height: 800px;
+            overflow: hidden;
+            border: none;
+        }
+    </style>
 </head>
 
 <body>
     <section id=Welcome>
         <img src="Group 2.svg" style="height:80px; position: absolute; top:10px;">
-            <h1>Welcome to Renuka Products!</h1>
-            <h4>A taste just like home.</h4>
-            <hr color=white width=28% size=3px noshade>
-            <br>
-            <br>
-            <a href=#order><button id=BuyNow>BUY NOW!</button></a>
+        <h1>Welcome to Renuka Products!</h1>
+        <h4>A taste just like home.</h4>
+        <hr color=white width=28% size=3px noshade>
+        <br>
+        <br>
+        <a href=#order><button id=BuyNow>BUY NOW!</button></a>
     </section>
     <br>
     <div class=container id=order>
         <main id=main>
             <h1 align=center style="font-family:'Montserrat',sans-serif;font-weight:bolder">Buy our products</h1>
-            <marquee direction=right id=buy style=font-weight:bold;font-size:large>Shevaya Only available in summer season.</marquee>
+            <marquee direction=right id=buy style=font-weight:bold;font-size:large>Shevaya Only available in summer
+                season.</marquee>
             <div class="row g-5">
                 <div class="col-md-7 col-lg-8">
                     <h4 class=mb-3>Billing address</h4>
@@ -117,9 +281,11 @@
     </div>
     <br>
     <br>
-        <marquee direction=right style=font-weight:bold;font-size:large><h2 style=font-family:sans-serif;font-size:60px;color:rgb(87,87,87)><img
-            src=https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png
-            width=57px>9372077803</h2></marquee>
+    <marquee direction=right style=font-weight:bold;font-size:large>
+        <h2 style=font-family:sans-serif;font-size:60px;color:rgb(87,87,87)><img
+                src=https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png
+                width=57px>9372077803</h2>
+    </marquee>
     <script src=js/bootstrap.bundle.min.js></script>
     <script src=js/checkout.js></script>
 </body>

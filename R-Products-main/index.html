@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang=ENGLISH>
+
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <title>Renuka Products</title>
+    <link rel=preconnect href=https://fonts.googleapis.com>
+    <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel=stylesheet>
+    <link href=css/bootstrap.min.css rel=stylesheet>
+    <link href=css/checkout.css rel=stylesheet>
+    <link rel=stylesheet href=css/style.css>
+    <link rel="icon" type="image/x-icon" href="Group 1.svg">
+    <style>
+        /* The device with borders */
+        .smartphone {
+            position: relative;
+            width: 360px;
+            height: 640px;
+            margin: auto;
+            border: 16px black solid;
+            border-top-width: 60px;
+            border-bottom-width: 60px;
+            border-radius: 36px;
+        }
+
+        /* The horizontal line on the top of the device */
+        .smartphone:before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 10px;
+        }
+
+        /* The circle on the bottom of the device */
+        .smartphone:after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            left: 50%;
+            bottom: -65px;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 50%;
+        }
+
+        /* The screen (or content) of the device */
+        .smartphone .content {
+            width: 360px;
+            height: 640px;
+            background: white;
+        }
+    </style>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        /* The device with borders */
+        .tablet {
+            position: relative;
+            width: 768px;
+            height: 1024px;
+            margin: auto;
+            border: 16px black solid;
+            border-top-width: 60px;
+            border-bottom-width: 60px;
+            border-radius: 36px;
+        }
+
+        /* The horizontal line on the top of the device */
+        .tablet:before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 10px;
+        }
+
+        /* The circle on the bottom of the device */
+        .tablet:after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            left: 50%;
+            bottom: -65px;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 50%;
+        }
+
+        /* The screen (or content) of the device */
+        .tablet .content {
+            width: 768px;
+            height: 1024px;
+            background: white;
+            margin: -1px;
+        }
+    </style>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        /* The laptop with borders */
+        .laptop {
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scale(.6) translate(-50%);
+            /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+            transform: scale(.6) translate(-50%);
+            /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+            left: 50%;
+            position: absolute;
+            width: 1366px;
+            height: 800px;
+            border-radius: 6px;
+            border-style: solid;
+            border-color: black;
+            border-width: 24px 24px 80px;
+            background-color: black;
+
+        }
+
+        /* The keyboard of the laptop */
+        .laptop:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1600px;
+            height: 60px;
+            margin: 80px 0 0 -110px;
+            background: black;
+            border-radius: 6px;
+        }
+
+        /* The top of the keyboard */
+        .laptop:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 250px;
+            height: 30px;
+            bottom: -110px;
+            left: 50%;
+            -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+            background: #f1f1f1;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            z-index: 1;
+        }
+
+        /* The screen (or content) of the device */
+        .laptop .content {
+            width: 1366px;
+            height: 800px;
+            overflow: hidden;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section id=Welcome>
+        <img src="Group 2.svg" style="height:80px; position: absolute; top:10px;">
+        <img src="Group 3 (1).svg" style="height: 205px; position: absolute; right: 100px; bottom: 330px;" class="yo">
+        <br><br>
+        <h1>Welcome to Renuka Products!</h1>
+        <h4>A taste just like home.</h4>
+        <hr color=white width=28% size=3px noshade>
+        <br>
+        <br>
+        <a href=#order><button id=BuyNow>BUY NOW!</button></a>
+    </section>
+    <br>
+    <div class=container id=order>
+        <main id=main>
+            <h1 align=center style="font-family:'Montserrat',sans-serif;font-weight:bolder">Buy our products</h1>
+            <marquee direction=right id=buy style=font-weight:bold;font-size:large>Shevaya Only available in summer
+                season.</marquee>
+            <div class="row g-5">
+                <div class="col-md-7 col-lg-8">
+                    <h4 class=mb-3>Billing address</h4>
+                    <form class=needs-validation novalidate action=https://formspree.io/f/mpzeqkqb method=POST>
+                        <div class="row g-3">
+                            <div class=col-sm-6>
+                                <label for=firstName class=form-label>First name</label>
+                                <input type=text class=form-control id=firstName name=firstName placeholder value
+                                    required>
+                                <div class=invalid-feedback>
+                                    Valid first name is required.
+                                </div>
+                            </div>
+                            <div class=col-sm-6>
+                                <label for=lastName class=form-label>Last name</label>
+                                <input type=text class=form-control id=lastName name=lastName placeholder value
+                                    required>
+                                <div class=invalid-feedback>
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class=col-12>
+                                <label for=phone class=form-label>Phone</label>
+                                <input type=tel maxlength=10 minlength=10 class=form-control id=phone name=phone
+                                    placeholder=1234567890 required>
+                                <div class=invalid-feedback>
+                                    Please enter a valid phone number for shipping updates.
+                                </div>
+                            </div>
+                            <div class=col-12>
+                                <label for=email class=form-label>Email <span class=text-muted></span></label>
+                                <input type=email class=form-control id=email name=email placeholder=email@example.com>
+                                <div class=invalid-feedback>
+                                    Please enter a valid email address for shipping updates.
+                                </div>
+                            </div>
+                            <div class=col-12>
+                                <label for=address class=form-label>Address</label>
+                                <input type=text class=form-control id=address name=address
+                                    placeholder="1234 Main Street" required>
+                                <div class=invalid-feedback>
+                                    Please enter your shipping address.
+                                </div>
+                            </div>
+                            <div class=col-12>
+                                <label for=message class=form-label>Your Order</label>
+                                <select class=form-control id=message name=message required multiple=multiple>
+                                    <option value=Rajgira_Pith_1kg>Shevaya (1kg)</option>
+                                    <option value=Rajgira_Ladu_250g>Rajgra Ladu (250g)</option>
+                                    <option value=Rajgira_Ladu_500g>Rajgra Ladu (500g)</option>
+                                    <option value=Rajgira_Ladu_1kg>Rajgra Ladu (1kg)</option>
+                                    <option value=Supari_250g>Supari (250g)</option>
+                                    <option value=Supari_500g>Supari (500g)</option>
+                                    <option value=Supari_1kg>Supari (1kg)</option>
+                                    <option value=Anarase_Flour_250g>Anarase Flour (250g)</option>
+                                    <option value=Anarase_Flour_500g>Anarase Flour (500g)</option>
+                                    <option value=Anarase_Flour_1kg>Anarase Flour (1kg)</option>
+                                    <option value=Upwas_Bhajani_250g>Upwas Bhajani (250g)</option>
+                                    <option value=Upwas_Bhajani_500g>Upwas Bhajani (500g)</option>
+                                    <option value=Upwas_Bhajani_1kg>Upwas Bhajani (1kg)</option>
+                                    <option value=Rajgira_Lahi_250g>Rajgira Lahi (250g)</option>
+                                    <option value=Rajgira_Lahi_500g>Rajgira Lahi (500g)</option>
+                                    <option value=Rajgira_Lahi_1kg>Rajgira Lahi (1kg)</option>
+                                    <option value=Metkut_250g>Metkut (250g)</option>
+                                    <option value=Metkut_500g>Metkut (500g)</option>
+                                    <option value=Metkut_1kg>Metkut (1kg)</option>
+                                    <option value=Chakli_Bhajni_250g>Chakani Bhajani (250g)</option>
+                                    <option value=Chakli_Bhajni_500g>Chakani Bhajani (500g)</option>
+                                    <option value=Chakli_Bhajni_1kg>Chakani Bhajani (1kg)</option>
+                                    <option value=Rajgira_Pith_250g>Rajgira Pith (250g)</option>
+                                    <option value=Rajgira_Pith_500g>Rajgira Pith (500g)</option>
+                                    <option value=Rajgira_Pith_1kg>Rajgira Pith (1kg)</option>
+                                </select>
+                                <div class=invalid-feedback>
+                                    Please choose what you want to order
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="w-100 btn btn-primary btn-lg" type=submit>Send Order</button>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <marquee direction=right style=font-weight:bold;font-size:large>
+        <h2 style=font-family:sans-serif;font-size:60px;color:rgb(87,87,87)><img
+                src=https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png
+                width=57px>9372077803</h2>
+    </marquee>
+    <script src=js/bootstrap.bundle.min.js></script>
+    <script src=js/checkout.js></script>
+</body>
+
+</html>

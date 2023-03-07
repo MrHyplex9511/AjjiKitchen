@@ -34,16 +34,6 @@ Label {
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
 }
 
-#CEO {
-    opacity: 0.05;
-    transition: .30s ease-out;
-}
-
-#CEO:hover {
-    opacity: 1;
-    transition: .25s ease-in;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }

@@ -34,14 +34,6 @@
 
         res.setHeader('X-XSS-Protection', '1; mode=block');
 
-        const waf = new WebApplicationFirewall();
-
-        app.use((req, res, next) => {
-            const filteredReq = waf.filterRequest(req);
-            const filteredRes = waf.filterResponse(res);
-            next();
-        });
-
         res.setHeader('Content-Encoding', 'gzip');
 
         res.setHeader('X-Frame-Options', 'DENY');
@@ -61,27 +53,7 @@
         res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
 
         res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
-
-        const LRU = require('lru-cache');
-
-        const cache = new LRU({
-            max: 500,
-            maxAge: 1000 * 60 * 5
-        });
-
-        function getCachedData(key, getDataFunc) {
-            const cachedData = cache.get(key);
-
-            if (cachedData) {
-                return Promise.resolve(cachedData);
-            } else {
-                return getDataFunc().then(data => {
-                    cache.set(key, data);
-                    return data;
-                });
-            }
-        }
-
+    
     </script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="navbar-fixed.css" rel="stylesheet">

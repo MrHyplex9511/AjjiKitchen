@@ -4,6 +4,7 @@
 <head>
     <meta charset=utf-8>
     <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
     <title>Renuka Products</title>
     <link rel=preconnect href=https://fonts.googleapis.com>
     <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
@@ -13,7 +14,7 @@
     <link rel=stylesheet href=css/style.css>
     <link rel="icon" type="image/x-icon" href="Group 1.svg">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
-    <script  src="https://cdn.example.com/jquery.min.js">
+    <script src="https://cdn.example.com/jquery.min.js">
         if (top != self) {
             top.location = self.location;
         }
@@ -27,8 +28,19 @@
 
         res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' https://formspree.io/f/mpzeqkqb");
 
-        
+        document.referrerPolicy = 'no-referrer';
 
+        res.setHeader('X-Content-Type-Options', 'nosniff');
+
+        res.setHeader('X-XSS-Protection', '1; mode=block');
+
+        const waf = new WebApplicationFirewall();
+
+        app.use((req, res, next) => {
+            const filteredReq = waf.filterRequest(req);
+            const filteredRes = waf.filterResponse(res);
+            next();
+        });
 
     </script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">

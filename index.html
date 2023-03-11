@@ -19,41 +19,11 @@
             top.location = self.location;
         }
 
-        document.cookie = 'session_id=abc123; HttpOnly; SameSite=strict';
-
         const sanitizedInput = DOMPurify.sanitize(userInput);
 
         res.setHeader('Access-Control-Allow-Origin', 'https://formspree.io/f/mpzeqkqb');
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
 
-        res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' https://formspree.io/f/mpzeqkqb");
-
-        document.referrerPolicy = 'no-referrer';
-
-        res.setHeader('X-Content-Type-Options', 'nosniff');
-
-        res.setHeader('X-XSS-Protection', '1; mode=block');
-
-        res.setHeader('Content-Encoding', 'gzip');
-
-        res.setHeader('X-Frame-Options', 'DENY');
-
-        res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
-
-        res.setHeader('X-DNS-Prefetch-Control', 'off');
-
-        res.setHeader('X-Permitted-Cross-Domain-Policies', 'none');
-
-        res.setHeader('Expect-CT', 'enforce, max-age=86400');
-
-        res.setHeader('Feature-Policy', "geolocation 'none'; camera 'none'; microphone 'none'");
-
-        res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-
-        res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-
-        res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
-    
     </script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="navbar-fixed.css" rel="stylesheet">

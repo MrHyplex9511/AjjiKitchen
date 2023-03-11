@@ -42,6 +42,22 @@
             next();
         });
 
+        res.setHeader('Content-Encoding', 'gzip');
+
+        res.setHeader('X-Frame-Options', 'DENY');
+
+        res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+
+        res.setHeader('X-DNS-Prefetch-Control', 'off');
+
+        res.setHeader('X-Permitted-Cross-Domain-Policies', 'none');
+
+        res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'");
+
+        res.setHeader('Expect-CT', 'enforce, max-age=86400');
+
+        res.setHeader('Feature-Policy', "geolocation 'none'; camera 'none'; microphone 'none'");
+
     </script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="navbar-fixed.css" rel="stylesheet">

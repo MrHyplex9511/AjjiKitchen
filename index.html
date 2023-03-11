@@ -34,14 +34,6 @@
 
         res.setHeader('X-XSS-Protection', '1; mode=block');
 
-        const waf = new WebApplicationFirewall();
-
-        app.use((req, res, next) => {
-            const filteredReq = waf.filterRequest(req);
-            const filteredRes = waf.filterResponse(res);
-            next();
-        });
-
         res.setHeader('Content-Encoding', 'gzip');
 
         res.setHeader('X-Frame-Options', 'DENY');

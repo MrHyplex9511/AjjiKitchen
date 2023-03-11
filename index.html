@@ -13,13 +13,25 @@
     <link rel=stylesheet href=css/style.css>
     <link rel="icon" type="image/x-icon" href="Group 1.svg">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
+    <script  src="https://cdn.example.com/jquery.min.js">
+        if (top != self) {
+            top.location = self.location;
+        }
+
+        document.cookie = 'session_id=abc123; HttpOnly; SameSite=strict';
+
+        const sanitizedInput = DOMPurify.sanitize(userInput);
+
+        res.setHeader('Access-Control-Allow-Origin', 'https://formspree.io/f/mpzeqkqb');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+
+        res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' https://formspree.io/f/mpzeqkqb");
+
+        
 
 
-
-
-
+    </script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
     <link href="navbar-fixed.css" rel="stylesheet">
 </head>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">

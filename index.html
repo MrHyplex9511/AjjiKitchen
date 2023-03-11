@@ -58,6 +58,12 @@
 
         res.setHeader('Feature-Policy', "geolocation 'none'; camera 'none'; microphone 'none'");
 
+        res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+
+        res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+
+        res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+
     </script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="navbar-fixed.css" rel="stylesheet">

@@ -14,11 +14,8 @@
     <link rel=stylesheet href=css/style.css>
     <link rel="icon" type="image/x-icon" href="Group 1.svg">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" async></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" async></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" async></script>
-    <script src="app.min.js" async></script>
-    <script src="app.min.js" async>
+    <script src="https://cdn.example.com/jquery.min.js">
+
         $.ajax({
             url: 'https://jsonplaceholder.typicode.com/posts',
             success: function (data) {
@@ -36,8 +33,26 @@
             .catch(function (error) {
                 console.log(error);
             });
-    </script>
-    <script src="https://cdn.example.com/jquery.min.js">
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                lazyImages.forEach(function (lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+
 
         if (top != self) {
             top.location = self.location;

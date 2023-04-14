@@ -15,8 +15,19 @@ body {
   color: #f3f3f3;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
-  background: linear-gradient(324deg, rgba(255, 32, 93, 1) 0, rgba(241, 71, 171, 1) 100%);
+  background: linear-gradient(324deg, rgba(255, 32, 93, 1) 0%, rgba(241, 71, 171, 1) 100%) fixed;
+  animation: background-move 10s linear infinite;
 }
+
+@keyframes background-move {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 0%;
+  }
+}
+
 
 #welcome h1 {
   font-family: 'Space Mono', monospace;

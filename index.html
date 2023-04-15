@@ -14,7 +14,20 @@
     <link rel=stylesheet href=css/style.css>
     <link rel="icon" type="image/x-icon" href="Group 1.svg">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
+    <!-- Protection code below -->
     <script src="https://cdn.example.com/jquery.min.js">
+
+        const Sentry = require('@sentry/node');
+
+        Sentry.init({ dsn: 'your-dsn-here' });
+
+        // Capture an error
+        try {
+            throw new Error('Something went wrong');
+        } catch (error) {
+            Sentry.captureException(error);
+        }
+
 
         $.ajax({
             url: 'https://jsonplaceholder.typicode.com/posts',
@@ -128,7 +141,7 @@
     </div>
 </nav>
 
-<body><div id="no" alt="This Website is not available at the time please check you  intenet connections or try again later.">
+<body>
     <section id="welcome">
         <br><br>
         <br>
@@ -139,110 +152,111 @@
     </section>
     <hr>
     <section id="ordersec">
-    <div class=container id=order>
-        <main id=main>
-            <h1 align=center style="font-family:'Montserrat',sans-serif;font-weight:bolder">Buy our products</h1>
-            <marquee direction=right id=buy style=font-weight:bold;font-size:large>Shevaya Only available in summer
-                season.</marquee>
-            <div class="row g-5">
-                <div class="col-md-7 col-lg-8">
-                    <h4 class=mb-3>Billing address</h4>
-                    <form class=needs-validation novalidate action=https://formspree.io/f/mpzeqkqb method=POST>
-                        <div class="row g-3">
-                            <div class=col-sm-6>
-                                <label for=First_Name class=form-label>First name</label>
-                                <input type=text class=form-control id=firstName name=firstName placeholder value
-                                    required>
-                                <div class=invalid-feedback>
-                                    Valid first name is required.
+        <div class=container id=order>
+            <main id=main>
+                <h1 align=center style="font-family:'Montserrat',sans-serif;font-weight:bolder">Buy our products</h1>
+                <marquee direction=right id=buy style=font-weight:bold;font-size:large>Shevaya Only available in summer
+                    season.</marquee>
+                <div class="row g-5">
+                    <div class="col-md-7 col-lg-8">
+                        <h4 class=mb-3>Billing address</h4>
+                        <form class=needs-validation novalidate action=https://formspree.io/f/mpzeqkqb method=POST>
+                            <div class="row g-3">
+                                <div class=col-sm-6>
+                                    <label for=First_Name class=form-label>First name</label>
+                                    <input type=text class=form-control id=firstName name=firstName placeholder value
+                                        required>
+                                    <div class=invalid-feedback>
+                                        Valid first name is required.
+                                    </div>
                                 </div>
-                            </div>
-                            <div class=col-sm-6>
-                                <label for=Last_Name class=form-label>Last name</label>
-                                <input type=text class=form-control id=lastName name=lastName placeholder value
-                                    required>
-                                <div class=invalid-feedback>
-                                    Valid last name is required.
+                                <div class=col-sm-6>
+                                    <label for=Last_Name class=form-label>Last name</label>
+                                    <input type=text class=form-control id=lastName name=lastName placeholder value
+                                        required>
+                                    <div class=invalid-feedback>
+                                        Valid last name is required.
+                                    </div>
                                 </div>
-                            </div>
-                            <div class=col-12>
-                                <label for=Phone class=form-label>Phone</label>
-                                <input type=tel maxlength=10 minlength=10 class=form-control id=phone name=phone
-                                    placeholder=1234567890 required>
-                                <div class=invalid-feedback>
-                                    Please enter a valid phone number for shipping updates.
+                                <div class=col-12>
+                                    <label for=Phone class=form-label>Phone</label>
+                                    <input type=tel maxlength=10 minlength=10 class=form-control id=phone name=phone
+                                        placeholder=1234567890 required>
+                                    <div class=invalid-feedback>
+                                        Please enter a valid phone number for shipping updates.
+                                    </div>
                                 </div>
-                            </div>
-                            <div class=col-12>
-                                <label for=E-mail class=form-label>Email <span
-                                        class=text-muted>(Optional)</span></label>
-                                <input type=email class=form-control id=email name=email placeholder=email@example.com>
-                                <div class=invalid-feedback>
-                                    Please enter a valid email address.
+                                <div class=col-12>
+                                    <label for=E-mail class=form-label>Email <span
+                                            class=text-muted>(Optional)</span></label>
+                                    <input type=email class=form-control id=email name=email
+                                        placeholder=email@example.com>
+                                    <div class=invalid-feedback>
+                                        Please enter a valid email address.
+                                    </div>
                                 </div>
-                            </div>
-                            <div class=col-12>
-                                <label for=Address class=form-label>Address</label>
-                                <input type=text class=form-control id=address name=address
-                                    placeholder="1234 Main Street" required>
-                                <div class=invalid-feedback>
-                                    Please enter your shipping address.
+                                <div class=col-12>
+                                    <label for=Address class=form-label>Address</label>
+                                    <input type=text class=form-control id=address name=address
+                                        placeholder="1234 Main Street" required>
+                                    <div class=invalid-feedback>
+                                        Please enter your shipping address.
+                                    </div>
                                 </div>
-                            </div>
-                            <div class=col-12>
-                                <label for=Order class=form-label>Your Order</label>
-                                <select class=form-control id=order name=order required multiple=multiple>
-                                    <option value=Rajgira_Ladu_250g>Rajgra Ladu (250g)</option>
-                                    <option value=Rajgira_Ladu_500g>Rajgra Ladu (500g)</option>
-                                    <option value=Rajgira_Ladu_1kg>Rajgra Ladu (1kg)</option>
-                                    <option value=Shevaya_1kg>Shevaya (1kg)</option>
-                                    <option value=Supari_250g>Supari (250g)</option>
-                                    <option value=Supari_500g>Supari (500g)</option>
-                                    <option value=Supari_1kg>Supari (1kg)</option>
-                                    <option value=Anarase_Flour_250g>Anarase Flour (250g)</option>
-                                    <option value=Anarase_Flour_500g>Anarase Flour (500g)</option>
-                                    <option value=Anarase_Flour_1kg>Anarase Flour (1kg)</option>
-                                    <option value=Upwas_Bhajani_250g>Upwas Bhajani (250g)</option>
-                                    <option value=Upwas_Bhajani_500g>Upwas Bhajani (500g)</option>
-                                    <option value=Upwas_Bhajani_1kg>Upwas Bhajani (1kg)</option>
-                                    <option value=Rajgira_Lahi_250g>Rajgira Lahi (250g)</option>
-                                    <option value=Rajgira_Lahi_500g>Rajgira Lahi (500g)</option>
-                                    <option value=Rajgira_Lahi_1kg>Rajgira Lahi (1kg)</option>
-                                    <option value=Metkut_250g>Metkut (250g)</option>
-                                    <option value=Metkut_500g>Metkut (500g)</option>
-                                    <option value=Metkut_1kg>Metkut (1kg)</option>
-                                    <option value=Chakli_Bhajni_250g>Chakani Bhajani (250g)</option>
-                                    <option value=Chakli_Bhajni_500g>Chakani Bhajani (500g)</option>
-                                    <option value=Chakli_Bhajni_1kg>Chakani Bhajani (1kg)</option>
-                                    <option value=Rajgira_Pith_250g>Rajgira Pith (250g)</option>
-                                    <option value=Rajgira_Pith_500g>Rajgira Pith (500g)</option>
-                                    <option value=Rajgira_Pith_100g>Rajgira Pith (1kg)</option>
-                                </select>
-                                <div class=invalid-feedback>
-                                    Please choose what you want to order
+                                <div class=col-12>
+                                    <label for=Order class=form-label>Your Order</label>
+                                    <select class=form-control id=order name=order required multiple=multiple>
+                                        <option value=Rajgira_Ladu_250g>Rajgra Ladu (250g)</option>
+                                        <option value=Rajgira_Ladu_500g>Rajgra Ladu (500g)</option>
+                                        <option value=Rajgira_Ladu_1kg>Rajgra Ladu (1kg)</option>
+                                        <option value=Shevaya_1kg>Shevaya (1kg)</option>
+                                        <option value=Supari_250g>Supari (250g)</option>
+                                        <option value=Supari_500g>Supari (500g)</option>
+                                        <option value=Supari_1kg>Supari (1kg)</option>
+                                        <option value=Anarase_Flour_250g>Anarase Flour (250g)</option>
+                                        <option value=Anarase_Flour_500g>Anarase Flour (500g)</option>
+                                        <option value=Anarase_Flour_1kg>Anarase Flour (1kg)</option>
+                                        <option value=Upwas_Bhajani_250g>Upwas Bhajani (250g)</option>
+                                        <option value=Upwas_Bhajani_500g>Upwas Bhajani (500g)</option>
+                                        <option value=Upwas_Bhajani_1kg>Upwas Bhajani (1kg)</option>
+                                        <option value=Rajgira_Lahi_250g>Rajgira Lahi (250g)</option>
+                                        <option value=Rajgira_Lahi_500g>Rajgira Lahi (500g)</option>
+                                        <option value=Rajgira_Lahi_1kg>Rajgira Lahi (1kg)</option>
+                                        <option value=Metkut_250g>Metkut (250g)</option>
+                                        <option value=Metkut_500g>Metkut (500g)</option>
+                                        <option value=Metkut_1kg>Metkut (1kg)</option>
+                                        <option value=Chakli_Bhajni_250g>Chakani Bhajani (250g)</option>
+                                        <option value=Chakli_Bhajni_500g>Chakani Bhajani (500g)</option>
+                                        <option value=Chakli_Bhajni_1kg>Chakani Bhajani (1kg)</option>
+                                        <option value=Rajgira_Pith_250g>Rajgira Pith (250g)</option>
+                                        <option value=Rajgira_Pith_500g>Rajgira Pith (500g)</option>
+                                        <option value=Rajgira_Pith_100g>Rajgira Pith (1kg)</option>
+                                    </select>
+                                    <div class=invalid-feedback>
+                                        Please choose what you want to order
+                                    </div>
                                 </div>
-                            </div>
-                            <div class=col-12>
-                                <label for=Payment_Method class=form-label>Payment Method</label>
-                                <select class=form-control id=message name=message required>
-                                    <option value=UPI>UPI</option>
-                                    <option value=Online_Banking>Online Transfer</option>
-                                    <option value=Third-Party-apps>Gpay, Paytm, Phonepe and Whatsapp pay</option>
-                                </select>
-                                <div class=invalid-feedback>
-                                    Please chooose the payment method.
+                                <div class=col-12>
+                                    <label for=Payment_Method class=form-label>Payment Method</label>
+                                    <select class=form-control id=message name=message required>
+                                        <option value=UPI>UPI</option>
+                                        <option value=Online_Banking>Online Transfer</option>
+                                        <option value=Third-Party-apps>Gpay, Paytm, Phonepe and Whatsapp pay</option>
+                                    </select>
+                                    <div class=invalid-feedback>
+                                        Please chooose the payment method.
+                                    </div>
                                 </div>
-                            </div>
-                            <br>
-                            <button class="w-100 btn btn-primary btn-lg" type=submit>Send Order</button>
-                            <br>
-                    </form>
+                                <br>
+                                <button class="w-100 btn btn-primary btn-lg" type=submit>Send Order</button>
+                                <br>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     </section>
-        <br>
-        <br>
+    <br>
+    <br>
     </div>
     <br>
     <br>
@@ -264,7 +278,8 @@
             and healthfulness distinguishes us from other producers in the market. We offer our customers an exceptional
             range of homemade products that are both delicious and good for them.</p>
         <br>
-        <h1 align=center style="font-family:'Montserrat',sans-serif;font-weight:bolder">Our Commitment to Customer Privacy</h1>
+        <h1 align=center style="font-family:'Montserrat',sans-serif;font-weight:bolder">Our Commitment to Customer
+            Privacy</h1>
         <br>
         <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">At our organization, we take the privacy
             of our customers very seriously. We understand that they trust us
@@ -295,12 +310,12 @@
         </center>
         <label>How to place an order:-</label>
         <br>
-        <iframe src="HowtoPlaceanOrderonR-ProductsWebsite_PDF_2023-03-04163937.734030 (1).pdf" style="height: 450px; overflow: hidden; border-radius: 3px;" alt="PDF is not available">
+        <iframe src="HowtoPlaceanOrderonR-ProductsWebsite_PDF_2023-03-04163937.734030 (1).pdf"
+            style="height: 450px; overflow: hidden; border-radius: 3px;" alt="PDF is not available">
     </section>
     <hr>
     <script src=js/bootstrap.bundle.min.js></script>
     <script src=js/checkout.js></script>
-</div>
 </body>
 
 </html>

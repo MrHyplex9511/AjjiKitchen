@@ -1,43 +1,26 @@
-// Function to sanitize input and check for SQL injection
-function sanitizeInput(input) {
-  // Remove SQL injection patterns
-  const sanitizedInput = input.replace(/['";]/g, '');
-
-  // Check if the input was sanitized (SQL injection removed)
-  if (sanitizedInput !== input) {
-    // SQL injection detected
-    sendAlertEmail();
+function detectInspectConsole() {
+    // Listen for right-click event
+    window.addEventListener('contextmenu', function(event) {
+      // Check if the inspect console is open
+      if (typeof event.target === 'undefined' || event.target.nodeName !== 'HTML') {
+        // Redirect to the specified link
+        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+      }
+    });
+    
+    // Listen for keyboard shortcut event
+    window.addEventListener('keydown', function(event) {
+      // Check if the inspect console shortcut is used
+      if ((event.ctrlKey || event.metaKey) && (event.key === 'Shift' || event.keyCode === 73)) {
+        // Redirect to the specified link
+        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+      }
+    });
   }
-
-  // Return the sanitized input
-  return sanitizedInput;
-}
-
-// Function to send an alert email
-function sendAlertEmail() {
-  // Create a new XMLHttpRequest object
-  const xhr = new XMLHttpRequest();
-
-  // Prepare the data to be sent in the request body
-  const data = new FormData();
-  data.append('message', 'SQL INJECTION DETECTED');
-
-  // Set up the request
-  xhr.open('POST', 'https://formspree.io/f/mpzeqkqb', true);
-
-  // Send the request
-  xhr.send(data);
-}
-
-// Attach event listeners to input fields
-const inputFields = document.querySelectorAll('input[type="text"], input[type="password"]');
-inputFields.forEach(input => {
-  input.addEventListener('blur', function() {
-    this.value = sanitizeInput(this.value);
-  });
-});
-
-        
+  
+  // Call the detectInspectConsole function
+  detectInspectConsole();
+          
         const Sentry = require('@sentry/node');
 
         Sentry.init({ dsn: 'your-dsn-here' });

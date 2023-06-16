@@ -1,44 +1,42 @@
-        // Import the 'fetch' module if you are using Node.js
-// const fetch = require('node-fetch');
-
 // Function to sanitize input and check for SQL injection
 function sanitizeInput(input) {
-    // Remove SQL injection patterns
-    const sanitizedInput = input.replace(/['";]/g, '');
-  
-    // Check if the input was sanitized (SQL injection removed)
-    if (sanitizedInput !== input) {
-      // Send a POST request to Formspree
-      const url = 'https://formspree.io/f/mpzeqkqb';
-      const data = { message: 'SQL INJECTION DETECTED' };
-  
-      fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
-        .then(response => {
-          if (response.ok) {
-            console.log('SQL injection notification sent successfully.');
-          } else {
-            console.log('Failed to send SQL injection notification.');
-          }
-        })
-        .catch(error => {
-          console.error('Error sending SQL injection notification:', error);
-        });
-    }
-  
-    return sanitizedInput;
+  // Remove SQL injection patterns
+  const sanitizedInput = input.replace(/['";]/g, '');
+
+  // Check if the input was sanitized (SQL injection removed)
+  if (sanitizedInput !== input) {
+    // SQL injection detected
+    sendAlertEmail();
   }
-  
-  // Example usage:
-  const userInput = "SELECT * FROM users; --";
-  const sanitizedUserInput = sanitizeInput(userInput);
-  console.log('Sanitized input:', sanitizedUserInput);
-  
+
+  // Return the sanitized input
+  return sanitizedInput;
+}
+
+// Function to send an alert email
+function sendAlertEmail() {
+  // Create a new XMLHttpRequest object
+  const xhr = new XMLHttpRequest();
+
+  // Prepare the data to be sent in the request body
+  const data = new FormData();
+  data.append('message', 'SQL INJECTION DETECTED');
+
+  // Set up the request
+  xhr.open('POST', 'https://formspree.io/f/mpzeqkqb', true);
+
+  // Send the request
+  xhr.send(data);
+}
+
+// Attach event listeners to input fields
+const inputFields = document.querySelectorAll('input[type="text"], input[type="password"]');
+inputFields.forEach(input => {
+  input.addEventListener('blur', function() {
+    this.value = sanitizeInput(this.value);
+  });
+});
+
         
         const Sentry = require('@sentry/node');
 

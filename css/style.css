@@ -65,7 +65,7 @@ body {
 .smartphone .content {
   width: 360px;
   height: 640px;
-  background: white;
+  background-color: white;
 }
 
 .nav-scroller {
